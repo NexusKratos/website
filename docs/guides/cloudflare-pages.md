@@ -1,5 +1,7 @@
 # Deploy to Cloudflare Pages
 
+Historical alternative only. Current delivery uses [Workers Static Assets](cloudflare-workers.md) following the Pages Git-installation failure recorded in ADR 0002.
+
 ## Connect the repository
 
 1. Sign into the Cloudflare account that owns `nexuskratos.dev`.

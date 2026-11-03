@@ -6,6 +6,8 @@ Use a feature branch and pull request. Check changes at mobile and desktop width
 
 Use a GitHub noreply address if you wish to keep your commit email private. AI-assisted contributions need the same ownership and validation as other contributions.
 
-`VERSION` is the source checkpoint version. Maintainers allocate `checkpoint/<VERSION>` after focused verification; a checkpoint is not a live deployment. No `v*` release or GitHub Actions workflow is part of initial setup. The Cloudflare connection can trigger deployment independently of tags: inspect its branch settings before pushing.
+`VERSION` is the source checkpoint version. Maintainers allocate `checkpoint/<VERSION>` after focused verification; a checkpoint is not a live deployment. No `v*` release or GitHub Actions workflow is part of initial setup. Deployment is currently explicit through Wrangler. If Workers Builds is connected later, inspect its branch settings before pushing.
 
 Contact hello@nexuskratos.dev; report sensitive issues to security@nexuskratos.dev.
+
+Run `node --test worker/redirect.test.mjs` for redirect changes. The standard-library tests exercise hostname matching, path/query preservation, HTTPS canonicalization, and asset pass-through.

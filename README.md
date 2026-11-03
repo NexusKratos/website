@@ -12,19 +12,13 @@ Only `public/` is deployed. Serve that directory as the document root with a loc
 
 The site uses plain HTML, CSS, and JavaScript, with no external fonts, analytics, tracking, runtime API, cookies, signup form, or collected visitor data. The theme preference is stored locally when storage is available.
 
-## Cloudflare Pages
+## Cloudflare deployment
 
-Use the Git integration with repository `NexusKratos/website`:
+The active deployment path is **Workers Static Assets**, with a small hostname redirect handler. `public/` is the static document root; `worker/` is not published as an asset directory. See [deployment guide](docs/guides/cloudflare-workers.md) for validation, deployment, domains, and rollback.
 
-| Setting | Value |
-| --- | --- |
-| Production branch | `main` |
-| Framework preset | None |
-| Build command | `exit 0` |
-| Build output directory | `public` |
-| Root directory | Repository root |
+The original [Pages guide](docs/guides/cloudflare-pages.md) is retained as an alternative, not the current deployment mechanism. Pages rejected the new Git installation; [ADR 0002](docs/adr/0002-workers-static-assets.md) records the switch.
 
-See [deployment guide](docs/guides/cloudflare-pages.md) for connection, domain, redirect, and rollback steps. No Cloudflare project or working domain is implied by these settings.
+Source pushes and checkpoint tags do not automatically deploy. A live deployment must be verified separately from the source checkpoint.
 
 ## Contribute
 
