@@ -8,5 +8,23 @@
     "binding": "ASSETS",
     "run_worker_first": true,
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "nexuskratos.dev",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.nexuskratos.dev",
+      "custom_domain": true
+    },
+    {
+      "pattern": "nexuskratos.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.nexuskratos.com",
+      "custom_domain": true
+    }
+  ]
 }

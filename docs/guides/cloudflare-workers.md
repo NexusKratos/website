@@ -13,7 +13,7 @@ wrangler deploy --config wrangler.jsonc
 
 Deploy only a checked, committed candidate; record its commit and resulting Worker version. `public/` is the asset root. The handler must run before assets to redirect secondary hosts even for existing paths. Missing files must retain real 404 status. Never upload the repository root as assets.
 
-The config initially enables a workers.dev preview without declaring domain routes. Once that preview is verified, attach the four exact managed custom domains to `nexuskratos-website` through Cloudflare's Workers domain API or dashboard: `nexuskratos.dev`, `www.nexuskratos.dev`, `nexuskratos.com`, `www.nexuskratos.com`.
+The config records the four verified managed custom domains. Initial setup deployed a workers.dev preview first, verified it, then attached these exact custom domains to `nexuskratos-website` through Cloudflare's Workers domain API: `nexuskratos.dev`, `www.nexuskratos.dev`, `nexuskratos.com`, `www.nexuskratos.com`.
 
 Cloudflare managed custom domains create web DNS records and certificates. Inspect conflicts and never authorize an override of an existing record implicitly. Do not change MX, SPF, DKIM, DMARC, catch-all routing, or any other mail settings.
 

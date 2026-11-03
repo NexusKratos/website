@@ -1,11 +1,9 @@
 # Progress
 
-2026-11-04: public website repository created. Static page implementation and browser validation in progress.
+2026-11-04: source foundation and static website complete. **https://nexuskratos.dev is live** on Cloudflare Workers Static Assets. The .com apex and both www aliases return HTTP301 to the primary HTTPS domain, preserving path/query; live follow checks complete in one redirect.
 
-Cloudflare account access is working after the installed Wrangler refreshed OAuth. Both domain zones are active. No NexusKratos Pages project or domain binding has been created. The owner installed Cloudflare Workers and Pages with selected repository access; GitHub API confirms that connection. DNS API access returns 403 under the current OAuth scope, so domain DNS changes may require the owner.
+Deployed code candidate: `5eb6e237c6394b5fcb89fb45b26b7baee17237ba`. Cloudflare Worker version: `ba049825-1797-4258-b9dd-b5c2712a29bf`. Final source checkpoint includes documentation and declarations for the same four verified domain bindings; public assets and Worker code are unchanged from the deployed candidate.
 
-A live site and .com redirect are not yet verified. Existing mail records remain untouched.
+Verified: five local viewport widths; source reviews; 13 redirect tests; deployed source hashes/security headers/custom404; live desktop/mobile theme controls and primary-domain navigation. No application runtime or Warboard integration is claimed.
 
-## Resolved setup attempts
-
-The initial API requests returned 403 due to an expired access token. Offline npm execution could not resolve its cached Wrangler version; invoking an already installed Wrangler refreshed authentication successfully. These failures are not current authentication blockers; no package was installed.
+Hosting attempts retained in the deployment report: initial expired OAuth resolved by existing Wrangler; Pages Git installation failed internally; supported Workers Static Assets deployment succeeded. No mail records were modified. Git pushes do not automatically deploy.
