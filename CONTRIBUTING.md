@@ -11,3 +11,7 @@ Use a GitHub noreply address if you wish to keep your commit email private. AI-a
 Contact hello@nexuskratos.dev; report sensitive issues to security@nexuskratos.dev.
 
 Run `node --test worker/redirect.test.mjs` for redirect changes. The standard-library tests exercise hostname matching, path/query preservation, HTTPS canonicalization, and asset pass-through.
+
+## Protected branches and automation
+
+Changes to `main` require a pull request. Ordinary contributions require one approving review and resolved conversations; stale approvals are dismissed when source changes. Only merge commits are allowed. The sole maintainer can use the documented administrator exception through a PR; direct pushes remain blocked. Checkpoint and release tags cannot be rewritten or deleted. Actions must be pinned to full commit SHAs and currently must be GitHub-owned; external contributors need approval before workflows run.
