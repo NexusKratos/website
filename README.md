@@ -8,7 +8,7 @@ The platform and its planned Warboard integration are under development. This re
 
 ## Files and local preview
 
-Only `public/` is deployed. Open `public/index.html` in a browser for a quick preview, or serve that directory with any local static-file server using an available port. No package installation or build step is required. Never deploy the repository root.
+Only `public/` is deployed. Serve that directory as the document root with a local static-file server using an available port, then open its HTTP URL. Direct `file://` previews are unsupported because assets use root-relative URLs. No package installation or build step is required. Never deploy the repository root.
 
 The site uses plain HTML, CSS, and JavaScript, with no external fonts, analytics, tracking, runtime API, cookies, signup form, or collected visitor data. The theme preference is stored locally when storage is available.
 
