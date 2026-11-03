@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.2 — 2026-11-04
+
+- Configure public repository security, protected branches/tags, private reporting, scanning, and restricted Actions permissions.
+
 ## 0.0.1 — 2026-11-04
 
 - Establish the NexusKratos static website and Cloudflare Pages deployment guide.

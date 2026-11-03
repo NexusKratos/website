@@ -14,3 +14,7 @@ Threat sketch: public static assets and outbound GitHub/email links; no accounts
 - Cloudflare Pages Git installation failed. ADR0002 records the successful Workers Static Assets alternative. Actual domains and forwarding passed live acceptance.
 
 The platform itself is still under development. No application release, automatic deployment pipeline, or Warboard repository migration is part of this task.
+
+## Repository security — authorized 2026-11-04
+
+Status: done 2026-11-04 for the applied configuration; source records close through the protected PR workflow. Owner: coordinator. Scope: the two new public repositories only. Record security choices, enable native GitHub settings, commit the settings documentation, activate branch/tag rules, and verify API readback. No application code, dependencies, deployment, organization membership, or org-wide account policy changes. Threat scope: protect shared source and workflow permissions; preserve owner access through an audited PR exception.
