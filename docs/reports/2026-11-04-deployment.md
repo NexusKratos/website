@@ -6,7 +6,7 @@ Public website repository and static landing page, system/light/dark themes, con
 
 ## Verification evidence
 
-Deployed code candidate: `5eb6e237c6394b5fcb89fb45b26b7baee17237ba`; Worker version `ba049825-1797-4258-b9dd-b5c2712a29bf`. Deployment CLI reported successful upload and deployment. Seven served assets total approximately31KB; `_headers` is configuration, not an eighth served file.
+Deployed code candidate: `d4c45bc067ab0e34c694c8395a611f8de5c8c14c`; Worker version `e9afe86d-edf2-451f-a432-f32aef6370ed`. Deployment CLI reported successful upload and deployment. Seven served assets total approximately31KB; `_headers` is configuration, not an eighth served file.
 
 Local Chrome checks passed five widths (1440/1024/768/390/360), overflow/anchors, keyboard focus, reduced motion, themes/persistence, blocked local storage, no-JavaScript fallback, CSP and404 recovery. Two source reviewers found no blocker; both identified one minor README file-preview error, repaired. Focused Worker review on the deployed candidate also found no blocker. The redirect test runner reported **13 passed, 0 failed**. No third-party application dependencies exist.
 
@@ -34,4 +34,8 @@ No local dependency tree, build output, container, or preview server remains. So
 
 ## Live-only correction
 
-The final custom-domain browser console exposed Cloudflare's automatic analytics-beacon injection, blocked by the intended CSP. Source/local and workers.dev checks had not revealed that zone-level injection. Added the documented `Cache-Control: public, max-age=0, must-revalidate, no-transform` header for HTML so the proxy does not inject a script. This preserves the existing CSP. See [Cloudflare Web Analytics setup](https://developers.cloudflare.com/web-analytics/get-started/). A targeted live console/header check follows deployment of this header change; layout/redirect code are unchanged.
+The final custom-domain browser console exposed Cloudflare's automatic analytics-beacon injection, blocked by the intended CSP. Source/local and workers.dev checks had not revealed that zone-level injection. Added the documented `Cache-Control: public, max-age=0, must-revalidate, no-transform` header for HTML so the proxy does not inject a script. This preserves the existing CSP. See [Cloudflare Web Analytics setup](https://developers.cloudflare.com/web-analytics/get-started/). The targeted post-deployment browser check passed: HTTP200, no-transform header present, only the first-party script loaded, zero console/page errors, and theme controls working. Layout and redirect logic are unchanged.
+
+Focused Worker source review was pinned to 5eb6e237c6394b5fcb89fb45b26b7baee17237ba against 56c06d00b3e0f158ad2f0d557925dfdc42db16b4; it found no blockers. The later d4c45bc deployment adds the no-transform header and verified domain declarations, with no change to the Worker logic or visible page assets. Live checks cover those hosting changes.
+
+Storage observation before final Git metadata writes (`du -s -B1`): website checkout995,328 allocated bytes; main project checkout540,672; durable local setup evidence1,581,056. No disposable build output or dependency directory was produced, so removed bytes are0. Checkouts are owned by the maintainer and retained for development; evidence is owned by the setup coordinator and reviewed at the next deployment. Shared tool logs remain in their tool-managed locations and are not included in these three directory measurements.
